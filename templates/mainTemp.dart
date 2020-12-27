@@ -16,20 +16,29 @@ class _MyAppState extends State<MyApp> {
     {
       "question": "Which Us city do the Avengers battle the Chitauri",
       "options": ["Las Angeles", "Miami", "NewYork"],
+      "ans": "NewYork"
     },
     {
       "question": "Who is Loki's adoptive brother?",
       "options": ["Odin", "Thor", "Tony"],
+      "ans": "Thor"
     },
     {
       "question": "Who sells Ultron Vibranium and instantly makes billions",
       "options": ["Tony Stark", "Nick Fury", "Ulysses Klaue"],
+      "ans": "Ulysses Klaue"
     }
   ];
   var questionIndex = 0;
-  var ans = ["NewYork", "Thor", "Ulysses Klaue"];
+
   var result = 0;
-  
+  answerQuestion(int qi, String ans) {
+    setState(() {
+      if (ans == questions[qi]['ans']) result = result + 1;
+
+      questionIndex = questionIndex + 1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +48,7 @@ class _MyAppState extends State<MyApp> {
           title: Text('Quiz App'),
           backgroundColor: Colors.cyan[300],
         ),
-        body: Container(
-          child:
-        	Text("Hello from Main")
+        body: Container(child: Text("Hello from Main")),
       ),
       debugShowCheckedModeBanner: false,
     );
