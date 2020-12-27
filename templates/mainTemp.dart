@@ -15,7 +15,7 @@ class _MyAppState extends State<MyApp> {
   final questions = const [
     {
       "question": "Which Us city do the Avengers battle the Chitauri",
-      "options": ["Las Angeles", "Miami", "NewYork"],
+      "options": ["Los Angeles", "Miami", "NewYork"],
       "ans": "NewYork"
     },
     {
